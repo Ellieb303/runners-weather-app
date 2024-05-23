@@ -1,0 +1,33 @@
+body {
+  background: linear-gradient(
+    109.6deg,
+    rgb(17, 151, 147) 11.2%,
+    rgb(154, 214, 212) 55.4%,
+    rgb(255, 233, 171) 100.2%
+  );
+  margin: auto 0;
+}
+.weather-app {
+  margin-right: 12%;
+  margin-left: 12%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 2%;
+
+  background-color: rgb(241, 244, 223);
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+}
+#dm-sans-RunBoyRun {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+#title {
+  font-size: 3em;
+  font-weight: 500;
+  margin: auto;
+}
+header {
+  text-align: center;
+}

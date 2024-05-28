@@ -16,6 +16,7 @@ body {
 
   background-color: rgb(241, 244, 223);
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  border-radius: 10px;
 }
 #dm-sans-RunBoyRun {
   font-family: "DM Sans", sans-serif;
@@ -26,8 +27,67 @@ body {
 #title {
   font-size: 3em;
   font-weight: 500;
+  text-shadow: solid 3px red;
   margin: auto;
+  padding-bottom: 10px;
+}
+.form-control {
+  display: inline-flex;
+  max-width: 50%;
+  padding: 10px;
+  margin: 0;
+  border: solid 1px rgb(17, 151, 147);
+}
+
+.searchButton {
+  margin: 1em;
+  width: 8em;
+  padding: 9px;
+  color: rgb(17, 151, 147);
+  background: whitesmoke;
+  border-radius: 10px;
+  border: solid 1px whitesmoke;
+  transition: ease-in-out;
+  box-shadow: 0px 3px 3px 0px;
 }
 header {
   text-align: center;
+}
+
+.current-weather {
+  display: flex;
+  justify-content: space-around;
+  padding: 0px 5%;
+}
+
+.current-temperature {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+#celcius {
+  position: relative;
+  top: -15px;
+  left: -10px;
+  font-size: 40px;
+}
+
+#current-weather {
+  font-size: 80px;
+}
+
+.current-elements {
+  font-style: italic;
+  color: rgb(80, 78, 78);
+}
+
+.location {
+  padding-top: 10px;
+}
+
+footer {
+  border-top: 1px solid #f9f7fe;
+  text-align: center;
+  padding-top: 15px;
+  color: rgba(39, 33, 66, 0.4);
 }

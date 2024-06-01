@@ -23,16 +23,15 @@
     <header>
       <img src="" alt="" />
       <h1 id="title">Is it a Good Time to Run?</h1>
-      <form>
+      <form id="form-search">
         <div class="mb-3">
           <input
-            type="email"
+            type="text"
             class="form-control"
-            id="exampleInputEmail1"
+            id="form-search-input"
             placeholder="Enter your location..."
-            aria-describedby="emailHelp"
+            aria-describedby="searchCity"
           />
-
           <button type="submit" class="searchButton">Search</button>
         </div>
       </form>
@@ -50,7 +49,7 @@
           <div class="current-elements">Feels like:</div>
         </div>
         <div>
-          <h2 class="location">Cheddar, Somerset</h2>
+          <h2 id="location">Cheddar, Somerset</h2>
           <h3 class="current-date">Monday 12th May, 17:08</h3>
 
           <p>Sunset: <span>Sunrise:</span></p>
@@ -65,5 +64,5 @@
       on Netlify
     </footer>
   </div>
-  <script src="script.js"></script>
+  <script src="src/script.js"></script>
 </html>

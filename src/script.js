@@ -10,9 +10,10 @@ function updateWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   let feelsElement = document.querySelector("#feels-like");
   let feelsLikeElement = response.data.temperature.feels_like;
-  let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
+  let timeElement = document.querySelector("#time");
   let dateElement = document.querySelector("#date-now");
+  let iconElement = document.querySelector("#icon");
 
   temperatureElement.innerHTML = Math.round(temperature);
   locationElement.innerHTML = response.data.city;
@@ -22,8 +23,8 @@ function updateWeather(response) {
   feelsElement.innerHTML = `${Math.round(feelsLikeElement)}℃`;
   timeElement.innerHTML = formatTime(date);
   dateElement.innerHTML = formatDate(date);
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon">`;
 }
-
 function formatTime(date) {
   let hours = date.getHours();
   let minutes = date.getMinutes();

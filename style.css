@@ -71,7 +71,7 @@ header {
   font-size: 40px;
 }
 
-#current-weather {
+.weather-icon {
   font-size: 80px;
 }
 

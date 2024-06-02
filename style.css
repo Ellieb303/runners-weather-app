@@ -61,14 +61,13 @@ header {
 }
 
 .current-temperature {
+  display: flex;
+  justify-content: space-around;
   font-size: 60px;
   font-weight: 700;
 }
 
 #celcius {
-  position: relative;
-  top: -15px;
-  left: -10px;
   font-size: 40px;
 }
 
@@ -81,8 +80,19 @@ header {
   color: rgb(80, 78, 78);
 }
 
+.describeElement {
+  color: blue;
+  font-weight: 500;
+  font-style: normal;
+}
+
 .location {
   padding-top: 10px;
+}
+
+.current-date {
+  font-style: oblique;
+  font-size: 20px;
 }
 
 footer {

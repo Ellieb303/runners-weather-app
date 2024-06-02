@@ -40,18 +40,28 @@
       <div class="current-weather">
         <div>
           <h2 class="current-temperature">
-            <span id="temperatureElement"></span>
+            <span id="temperature"></span>
             <span id="celcius">℃</span>
             <span id="current-weather">☁️</span>
           </h2>
-          <div>description of weather</div>
-          <div class="current-elements">Wind:</div>
-          <div class="current-elements">Humidity:</div>
-          <div class="current-elements">Feels like:</div>
+          <div class="describeElement" id="description"></div>
+          <div class="current-elements">
+            Wind:
+            <span class="describeElement" id="wind"></span>
+          </div>
+          <div class="current-elements">
+            Humidity:
+            <span class="describeElement" id="humidity"> </span>
+          </div>
+          <div class="current-elements">
+            Feels like:
+            <span class="describeElement" id="feels-like"></span>
+          </div>
         </div>
         <div>
-          <h2 id="location"></h2>
-          <h3 class="current-date">Monday 12th May, 17:08</h3>
+          <h1 id="location"></h1>
+          <h3 class="current-date" id="date-now"></h3>
+          <h3 class="current-date" id="time"></h3>
 
           <p>Sunset: <span>Sunrise:</span></p>
         </div>

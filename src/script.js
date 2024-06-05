@@ -90,7 +90,38 @@ function getLocation(event) {
   searchLocation(searchInput.value);
 }
 
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="weather-forecast">
+        <div class="row">
+          <div class="col-2">
+            <div class="weather-forecast-date">${day}</div>
+            <div>
+              <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+                alt=""
+                width="70px"
+              />
+            </div>
+            <div class="weather-forecast-temp">
+              <span class="weather-forecast-temp-upper">18℃</span>
+              <span class="weather-forecast-temp-lower">12℃</span>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
 let searchFormElement = document.querySelector("#form-search");
 searchFormElement.addEventListener("submit", getLocation);
 
 searchLocation("London");
+displayForecast();

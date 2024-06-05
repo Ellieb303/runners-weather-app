@@ -24,6 +24,8 @@ function updateWeather(response) {
   timeElement.innerHTML = formatTime(date);
   dateElement.innerHTML = formatDate(date);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon">`;
+
+  getForecast(response.data.city);
 }
 function formatTime(date) {
   let hours = date.getHours();
@@ -90,16 +92,21 @@ function getLocation(event) {
   searchLocation(searchInput.value);
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "d589f04c5d3bf192d4720a0f02to3fc2";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiURL).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
 
   days.forEach(function (day) {
     forecastHtml =
       forecastHtml +
-      `<div class="weather-forecast">
-        <div class="row">
-          <div class="col-2">
+      ` <div class="weather-forecast-day">
             <div class="weather-forecast-date">${day}</div>
             <div>
               <img
@@ -112,9 +119,7 @@ function displayForecast() {
               <span class="weather-forecast-temp-upper">18℃</span>
               <span class="weather-forecast-temp-lower">12℃</span>
             </div>
-          </div>
-        </div>
-      </div>`;
+          </div>`;
   });
 
   let forecastElement = document.querySelector("#forecast");
@@ -124,4 +129,3 @@ let searchFormElement = document.querySelector("#form-search");
 searchFormElement.addEventListener("submit", getLocation);
 
 searchLocation("London");
-displayForecast();

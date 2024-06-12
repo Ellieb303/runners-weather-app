@@ -1,10 +1,9 @@
-//rerun of the data//
-
 function updateWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
   let locationElement = document.querySelector("#location");
   let descriptionElement = document.querySelector("#description");
+  let description = response.data.condition.description;
   let windElement = document.querySelector("#wind");
   let wind = response.data.wind.speed;
   let humidityElement = document.querySelector("#humidity");
@@ -14,6 +13,7 @@ function updateWeather(response) {
   let timeElement = document.querySelector("#time");
   let dateElement = document.querySelector("#date-now");
   let iconElement = document.querySelector("#icon");
+  let advice = document.querySelector("#weather-response");
 
   temperatureElement.innerHTML = Math.round(temperature);
   locationElement.innerHTML = response.data.city;
@@ -24,6 +24,18 @@ function updateWeather(response) {
   timeElement.innerHTML = formatTime(date);
   dateElement.innerHTML = formatDate(date);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon">`;
+
+  if (temperature > 24) {
+    advice.innerHTML = `Stay hydrated💧`;
+  } else if (temperature < 5) {
+    advice.innerHTML = `Layers Layers Layers🧤`;
+  } else if (description === "thunderstorm") {
+    advice.innerHTML = `Stay home!⚡`;
+  } else if (description === "clear sky") {
+    advice.innerHTML = `Close to the countryside? <div>Try a trail run 🏃‍♀️</div>`;
+  } else {
+    advice.innerHTML = `Enjoy your run! 😁`;
+  }
 
   getForecast(response.data.city);
 }
@@ -109,7 +121,7 @@ function displayForecast(response) {
   let forecastHtml = "";
 
   response.data.daily.forEach(function (day, index) {
-    if (index < 6) {
+    if (index < 5) {
       forecastHtml =
         forecastHtml +
         ` <div class="weather-forecast-day">
@@ -120,7 +132,7 @@ function displayForecast(response) {
               <img
                 src="${day.condition.icon_url}"
                 alt=""
-                width="70px"
+                class="forecast-icon"
               />
             </div>
             <div class="weather-forecast-temp">
@@ -141,3 +153,4 @@ let searchFormElement = document.querySelector("#form-search");
 searchFormElement.addEventListener("submit", getLocation);
 
 searchLocation("London");
+console.log(searchLocation);

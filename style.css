@@ -54,7 +54,7 @@ header {
 
 .current-weather {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: 0px 5%;
 }
 
@@ -96,6 +96,14 @@ header {
   font-size: 20px;
   margin: 0;
 }
+.advice-title {
+}
+.advice {
+  color: rgb(17, 151, 147);
+  font-size: 23px;
+  padding-top: 10%;
+  font-weight: 500;
+}
 
 .forecast-title {
   font-size: 2rem;
@@ -103,7 +111,7 @@ header {
 }
 
 .weather-forecast {
-  padding: 10px 40px;
+  padding: 10px 90px;
   text-align: center;
   font-size: 20px;
   display: flex;
@@ -118,9 +126,15 @@ header {
 
 .weather-forecast-date {
   font-size: 25px;
+  font-weight: 500;
+}
+
+.forecast-icon {
+  align-content: center;
+  width: 65px;
 }
 .weather-forecast-temp {
-  font-size: 16px;
+  font-size: 13px;
 }
 .weather-forecast-temp-upper {
   color: #0b0c0c;

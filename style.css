@@ -7,10 +7,15 @@ body {
   );
   margin: auto 0;
 }
-.weather-app {
-  margin: 45px auto;
-  max-width: 800px;
 
+.people-running {
+  background-position: 0%;
+  opacity: 0.3;
+}
+
+.weather-app {
+  margin: 50px auto;
+  max-width: 800px;
   padding: 2%;
   background-color: rgb(241, 244, 223);
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
@@ -97,11 +102,14 @@ header {
   margin: 0;
 }
 .advice-title {
+  margin-bottom: 0px;
+  font-size: 17px;
+  font-style: italic;
+  color: #dc3545;
 }
 .advice {
   color: rgb(17, 151, 147);
   font-size: 23px;
-  padding-top: 10%;
   font-weight: 500;
 }
 

@@ -29,12 +29,13 @@ function updateWeather(response) {
     advice.innerHTML = `Stay hydrated💧`;
   } else if (temperature < 5) {
     advice.innerHTML = `Layers Layers Layers🧤`;
-  } else if (description === "thunderstorm") {
-    advice.innerHTML = `Stay home!⚡`;
-  } else if (description === "clear sky") {
-    advice.innerHTML = `Close to the countryside? <div>Try a trail run 🏃‍♀️</div>`;
   } else {
     advice.innerHTML = `Enjoy your run! 😁`;
+  }
+  if (description === "thunderstorm") {
+    advice.innerHTML = `Stay home!⚡`;
+  } else if (description === "clear sky" && temperature > 6) {
+    advice.innerHTML = `Close to the countryside? <div>Try a trail run 🏃‍♀️</div>`;
   }
 
   getForecast(response.data.city);
